@@ -44,7 +44,7 @@
            headers: { 
              'Content-Type': 'application/json',
              "Accepts": "application/json",
-             "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90b29scy5lY3BlLm51LmFjLnRoXC9uZXR3b3JrXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjU5NDQ0MTMzLCJleHAiOjE2NTk0NDc3MzMsIm5iZiI6MTY1OTQ0NDEzMywianRpIjoicWJzTHdCd2pJWkxlcmRkNyIsInN1YiI6NywicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.mW9Cf1Egq_e7egx3_B9AQXDiHCq20kP5IrDl88PMVsQ",
+             "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90b29scy5lY3BlLm51LmFjLnRoXC9uZXR3b3JrXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjYwNTQxMDE5LCJleHAiOjE2NjA1NDQ2MTksIm5iZiI6MTY2MDU0MTAxOSwianRpIjoiRzRLR2dKQ3Z5dUhHa2gzRyIsInN1YiI6NywicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.MM0sjWX-_PSaYiNT518_-GR9tCF85MQ8qvIJSdXsv6M",
            },
            success: function(data){
              console.log(data);
@@ -198,8 +198,8 @@
           elementButtonSave.type = "button";
           elementButtonSave.id = "btnConfirm"+idItem;
           elementButtonSave.value = "รายละเอียด";
-        //elementStartDate.setAttribute("width","80");
-         // elementButtonSave.setAttribute("style","width:50px;");
+          //elementStartDate.setAttribute("width","80");
+          //elementButtonSave.setAttribute("style","width:50px;");
           //elementButtonSave.setAttribute("class","tealA400");
           
          
@@ -218,7 +218,21 @@
     }
   
     function popupConfirm(fullname,objElement){
-      alert(fullname);
+      $("#tabs" ).tabs( "option", "active",2);
+        $.ajax({
+            method: "GET",
+            url: "https://tools.ecpe.nu.ac.th/network/api/student/:student_id",
+            dataType : 'json',
+            headers: { 
+              'Content-Type': 'application/json',
+              "Accepts": "application/json",
+              "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90b29scy5lY3BlLm51LmFjLnRoXC9uZXR3b3JrXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjYwNTQxMDE5LCJleHAiOjE2NjA1NDQ2MTksIm5iZiI6MTY2MDU0MTAxOSwianRpIjoiRzRLR2dKQ3Z5dUhHa2gzRyIsInN1YiI6NywicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.MM0sjWX-_PSaYiNT518_-GR9tCF85MQ8qvIJSdXsv6M",
+            },
+            success: function(data){
+              console.log(data);                           
+              alert(fullname);
+            }
+          });
     }
 </script>
 
